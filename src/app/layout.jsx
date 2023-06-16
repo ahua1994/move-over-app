@@ -19,23 +19,34 @@ export default function RootLayout({ children }) {
                     alt="Move Over Logo"
                     width="200"
                     height="150"
+                    className="m-0"
                 ></Image>
                 <div className="links flex mr-2">
-                    <button className="start align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                        Start A Move
-                    </button>
-                    <button className="mymoves align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                        My Moves
-                    </button>
-                    <button className="about align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                        About
-                    </button>
-                    <button className="register align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                        Register
-                    </button>
-                    <button className="login align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                        Login
-                    </button>
+                    <Link href="/startmove">
+                        <button className="start align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
+                            Start A Move
+                        </button>
+                    </Link>
+                    <Link href="/mymoves">
+                        <button className="mymoves align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
+                            My Moves
+                        </button>
+                    </Link>
+                    <Link href="/about">
+                        <button className="about align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
+                            About
+                        </button>
+                    </Link>
+                    <Link href="/register">
+                        <button className="register align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
+                            Register
+                        </button>
+                    </Link>
+                    <Link href="/login">
+                        <button className="login align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
+                            Login
+                        </button>
+                    </Link>
                     <button className="logout align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
                         Logout
                     </button>
