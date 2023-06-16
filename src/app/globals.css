@@ -17,11 +17,10 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white; 
+  background: linear-gradient(30deg, rgb(255, 146, 0) 14.7%, rgb(255, 99, 97) 73%); 
 }
+
+nav{
+  font-size: 1.6rem;
+} 
