@@ -16,7 +16,7 @@ const Register = () => {
                             id="username"
                             placeholder=" "
                             required
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+                            className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
                         />
                         <label
                             htmlFor="username"
@@ -31,7 +31,7 @@ const Register = () => {
                             type="email"
                             required
                             placeholder=" "
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+                            className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
                         />
                         <label
                             htmlFor="email"
@@ -46,7 +46,7 @@ const Register = () => {
                             type="password"
                             required
                             placeholder=" "
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+                            className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
                         />
                         <label
                             htmlFor="password"

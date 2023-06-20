@@ -16,7 +16,7 @@ const Login = () => {
                             id="username"
                             placeholder=" "
                             required
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+                            className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
                         />
                         <label
                             htmlFor="username"
@@ -25,28 +25,13 @@ const Login = () => {
                             Username
                         </label>
                     </div>
-                    {/* <div className="relative w-full">
-                        <input
-                            id="email"
-                            type="email"
-                            required
-                            placeholder=" "
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
-                        />
-                        <label
-                            htmlFor="email"
-                            className="absolute text-gray-600 duration-200 transform -translate-y-4 scale-85 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-85 peer-focus:-translate-y-4 left-1"
-                        >
-                            Email
-                        </label>
-                    </div> */}
                     <div className="relative w-full">
                         <input
                             id="password"
                             type="password"
                             required
                             placeholder=" "
-                            className="text-black my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+                            className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
                         />
                         <label
                             htmlFor="password"
