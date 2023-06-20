@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    const nav = useRouter();
+    const router = useRouter();
     return (
         <html lang="en">
             <nav className="fixed w-full top-0 text-white flex justify-between h-20 ">
@@ -25,31 +25,31 @@ export default function RootLayout({ children }) {
                 ></Image>
                 <div className="links flex mr-2">
                     <button
-                        onClick={() => nav.push("/startmove")}
+                        onClick={() => router.push("/startmove")}
                         className="start align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
                         Start A Move
                     </button>
                     <button
-                        onClick={() => nav.push("/mymoves")}
+                        onClick={() => router.push("/mymoves")}
                         className="mymoves align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
                         My Moves
                     </button>
                     <button
-                        onClick={() => nav.push("/about")}
+                        onClick={() => router.push("/about")}
                         className="about align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
                         About
                     </button>
                     <button
-                        onClick={() => nav.push("/register")}
+                        onClick={() => router.push("/register")}
                         className="register align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
                         Register
                     </button>
                     <button
-                        onClick={() => nav.push("/login")}
+                        onClick={() => router.push("/login")}
                         className="login align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
                         Login

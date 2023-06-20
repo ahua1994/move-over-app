@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
+    const router = useRouter();
     return (
         <div className="Register flex justify-center items-center mt-24">
             <div className="reg-form w-[16%] text-center rounded-lg min-w-[300px]">
@@ -51,9 +55,14 @@ const Register = () => {
                             Password
                         </label>
                     </div>
-                    <p>
-                        Have an Account?{" "}
-                        <span className="text-[purple] cursor-pointer">Login Here!</span>
+                    <p className="my-2">
+                        Already Have an Account?{" "}
+                        <span
+                            className="text-[purple] cursor-pointer"
+                            onClick={() => router.push("/login")}
+                        >
+                            Login Here!
+                        </span>
                     </p>
                     <button className="bg-blue-500 hover:bg-blue-700 self-center text-white font-bold py-2 px-4 rounded-full active:bg-blue-600 mt-4">
                         Submit
