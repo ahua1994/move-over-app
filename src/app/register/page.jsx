@@ -9,7 +9,6 @@ const Register = () => {
         <div className="Register flex justify-center items-center mt-24">
             <div className="reg-form w-[16%] text-center rounded-lg min-w-[300px]">
                 <h1 className="text-3xl">Register</h1>
-                {/* make better tailwind input/label */}
                 <form action="" className="flex flex-col items-start py-4">
                     <div className="relative w-full">
                         <input
