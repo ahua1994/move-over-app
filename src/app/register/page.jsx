@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Register = () => {
+    const { currentUser } = useContext(AuthContext);
     const router = useRouter();
+    useEffect(() => currentUser && router.push("/"), []);
     return (
         <div className="Register flex justify-center items-center mt-24">
             <div className="reg-form w-[16%] text-center rounded-lg min-w-[300px]">

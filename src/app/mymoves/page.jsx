@@ -1,9 +1,12 @@
 "use client";
-import React from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { AuthContext } from "../contexts/AuthContext";
 
 const MyMoves = () => {
+    const { currentUser } = useContext(AuthContext);
     const router = useRouter();
+    useEffect(() => !currentUser && router.push("/login"), []);
     const mymoves = [
         {
             id: 1,
@@ -15,7 +18,7 @@ const MyMoves = () => {
             desc: "desc",
             status: false,
             owner: "me",
-            notes: "",
+            notes: "careful with glass",
             move_date: "timestamp",
             created: "timestamp",
         },

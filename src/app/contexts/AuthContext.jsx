@@ -18,6 +18,12 @@ const AuthContextProvider = ({ children }) => {
 
     const baseUrl = "https://ahua1994.pythonanywhere.com/";
     const router = useRouter();
+    const toastStyle = {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "dark",
+        hideProgressBar: true,
+    };
 
     const logout = () => {
         axios.post(
@@ -26,13 +32,13 @@ const AuthContextProvider = ({ children }) => {
             {
                 headers: {
                     Authorization: `Token ${
-                        JSON.parse(localStorage.getItem("DJ_REACT_CURRENT_USER")).key
+                        JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
                     }`,
                 },
             }
         );
         toast.info("You Have Been Signed Out", toastStyle);
-        localStorage.removeItem("DJ_REACT_CURRENT_USER");
+        localStorage.removeItem("MOVE_OVER_CURRENT_USER");
         setCurrentUser(null);
         router.push("/");
     };

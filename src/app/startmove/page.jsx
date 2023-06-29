@@ -1,7 +1,12 @@
 "use client";
-import React from "react";
+import { useRouter } from "next/navigation";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 const StartMove = () => {
+    const { currentUser } = useContext(AuthContext);
+    const router = useRouter();
+    useEffect(() => !currentUser && router.push("/login"), []);
     const handleSubmit = e => {
         e.preventDefault();
         return;
