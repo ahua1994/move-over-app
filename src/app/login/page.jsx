@@ -5,17 +5,23 @@ import { useRouter } from "next/navigation";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {
-    const { currentUser } = useContext(AuthContext);
+    const { currentUser, loginEmail, loginPassword, setLoginEmail, setLoginPassword, handleLogin } =
+        useContext(AuthContext);
     const router = useRouter();
-    useEffect(() => currentUser && router.push("/"), []);
+    useEffect(() => {
+        currentUser && router.push("/");
+        setLoginEmail("");
+        setLoginPassword("");
+    }, []);
     return (
         <div className="Login flex justify-center items-center mt-24">
             <div className="reg-form w-[16%] text-center rounded-lg min-w-[300px]">
                 <h1 className="text-3xl">Login</h1>
-                {/* make better tailwind input/label */}
-                <form action="" className="flex flex-col items-start py-4">
+                <form onSubmit={handleLogin} className="flex flex-col items-start py-4">
                     <div className="relative w-full">
                         <input
+                            value={loginEmail}
+                            onChange={e => setLoginEmail(e.target.value)}
                             id="username"
                             placeholder=" "
                             required
@@ -30,6 +36,8 @@ const Login = () => {
                     </div>
                     <div className="relative w-full">
                         <input
+                            value={loginPassword}
+                            onChange={e => setLoginPassword(e.target.value)}
                             id="password"
                             type="password"
                             required

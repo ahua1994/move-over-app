@@ -5,16 +5,35 @@ import { useRouter } from "next/navigation";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Register = () => {
-    const { currentUser } = useContext(AuthContext);
+    const {
+        currentUser,
+        registerUsername,
+        registerEmail,
+        registerPassword,
+        setRegisterUsername,
+        setRegisterEmail,
+        setRegisterPassword,
+        handleRegister,
+    } = useContext(AuthContext);
+
     const router = useRouter();
-    useEffect(() => currentUser && router.push("/"), []);
+
+    useEffect(() => {
+        setRegisterUsername("");
+        setRegisterEmail("");
+        setRegisterPassword("");
+        currentUser && router.push("/");
+    }, []);
+
     return (
         <div className="Register flex justify-center items-center mt-24">
             <div className="reg-form w-[16%] text-center rounded-lg min-w-[300px]">
                 <h1 className="text-3xl">Register</h1>
-                <form action="" className="flex flex-col items-start py-4">
+                <form onSubmit={handleRegister} className="flex flex-col items-start py-4">
                     <div className="relative w-full">
                         <input
+                            onChange={e => setRegisterUsername(e.target.value)}
+                            value={registerUsername}
                             id="username"
                             placeholder=" "
                             required
@@ -31,6 +50,8 @@ const Register = () => {
                         <input
                             id="email"
                             type="email"
+                            onChange={e => setRegisterEmail(e.target.value)}
+                            value={registerEmail}
                             required
                             placeholder=" "
                             className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
@@ -46,6 +67,8 @@ const Register = () => {
                         <input
                             id="password"
                             type="password"
+                            onChange={e => setRegisterPassword(e.target.value)}
+                            value={registerPassword}
                             required
                             placeholder=" "
                             className="text-black border-2 my-4 block px-2.5 pb-2.5 pt-4 w-full text-sm rounded-lg border-1 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
