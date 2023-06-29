@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { createContext, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -31,7 +31,7 @@ const AuthContextProvider = ({ children }) => {
                 },
             }
         );
-        // toast.info("You Have Been Signed Out", toastStyle);
+        toast.info("You Have Been Signed Out", toastStyle);
         localStorage.removeItem("DJ_REACT_CURRENT_USER");
         setCurrentUser(null);
         router.push("/");
@@ -39,12 +39,13 @@ const AuthContextProvider = ({ children }) => {
 
     const handleRegister = async e => {
         e.preventDefault();
-        const res = await axios.post(`${baseUrl}user/register/`, {
-            email: registerEmail,
-            password: registerPassword,
-            username: registerUsername,
-        });
-        // .catch(err => toast.error(err.message, toastStyle));
+        const res = await axios
+            .post(`${baseUrl}user/register/`, {
+                email: registerEmail,
+                password: registerPassword,
+                username: registerUsername,
+            })
+            .catch(err => toast.error(err.message, toastStyle));
         if (res.data) {
             localStorage.setItem(
                 "MOVE_OVER_CURRENT_USER",
@@ -54,24 +55,25 @@ const AuthContextProvider = ({ children }) => {
             setRegisterEmail("");
             setRegisterPassword("");
             setRegisterUsername("");
-            // toast.success("Registered Successfully!", toastStyle);
+            toast.success("Registered Successfully!", toastStyle);
             router.push("/");
         }
     };
 
     const handleLogin = async e => {
         e.preventDefault();
-        const res = await axios.post(`${baseUrl}user/login/`, {
-            username: loginEmail,
-            password: loginPassword,
-        });
-        // .catch(err => toast.error("An Error Occured :(", toastStyle));
+        const res = await axios
+            .post(`${baseUrl}user/login/`, {
+                username: loginEmail,
+                password: loginPassword,
+            })
+            .catch(err => toast.error("An Error Occured :(", toastStyle));
         if (res.data) {
             setCurrentUser({ ...res.data });
             localStorage.setItem("MOVE_OVER_CURRENT_USER", JSON.stringify({ ...res.data }));
             setLoginEmail("");
             setLoginPassword("");
-            // toast.success("Login Successful !", toastStyle);
+            toast.success("Login Successful !", toastStyle);
             router.push("/");
         }
     };

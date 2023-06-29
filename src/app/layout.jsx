@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,7 +60,9 @@ export default function RootLayout({ children }) {
                     </button>
                 </div>
             </nav>
-            <body className={inter.className}>{children}</body>
+            <ToastContainer>
+                <body className={inter.className}>{children}</body>
+            </ToastContainer>
         </html>
     );
 }
