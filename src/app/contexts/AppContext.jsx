@@ -7,7 +7,7 @@ export const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
     const [myMoves, setMyMoves] = useState([]);
 
-    const baseUrl = "https://ahua1994.pythonanywhere.com/";
+    const baseUrl = "http://127.0.0.1:8000/";
 
     const toastStyle = {
         position: "top-center",
@@ -17,13 +17,15 @@ const AppContextProvider = ({ children }) => {
     };
 
     const getObj = async (type, id) => {
-        let res = await axios.get(`${baseUrl}move/${type}/${id}`, {
-            headers: {
-                Authorization: `Token ${
-                    JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
-                }`,
-            },
-        });
+        let res = await axios
+            .get(`${baseUrl}move/${type}/${id}/`, {
+                headers: {
+                    Authorization: `Token ${
+                        JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
+                    }`,
+                },
+            })
+            .catch(err => toast.error(err.message, toastStyle));
     };
 
     const createObj = async (type, obj) => {
@@ -40,7 +42,7 @@ const AppContextProvider = ({ children }) => {
 
     const deleteObj = async (type, id) => {
         let res = await axios
-            .delete(`${baseUrl}${type}/${id}`, {
+            .delete(`${baseUrl}${type}/${id}/`, {
                 headers: {
                     Authorization: `Token ${
                         JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key

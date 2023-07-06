@@ -16,7 +16,7 @@ const AuthContextProvider = ({ children }) => {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
 
-    const baseUrl = "https://ahua1994.pythonanywhere.com/";
+    const baseUrl = "http://127.0.0.1:8000/";
     const router = useRouter();
     const toastStyle = {
         position: "top-center",
