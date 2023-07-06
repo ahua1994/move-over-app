@@ -16,6 +16,16 @@ const AppContextProvider = ({ children }) => {
         hideProgressBar: true,
     };
 
+    const getObj = async (type, id) => {
+        let res = await axios.get(`${baseUrl}move/${type}/${id}`, {
+            headers: {
+                Authorization: `Token ${
+                    JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
+                }`,
+            },
+        });
+    };
+
     const createObj = async (type, obj) => {
         let res = await axios
             .post(`${baseUrl}${type}/`, obj, {
@@ -45,6 +55,7 @@ const AppContextProvider = ({ children }) => {
             value={{
                 myMoves,
                 setMyMoves,
+                getObj,
                 createObj,
                 deleteObj,
             }}
