@@ -11,6 +11,7 @@ const Navbar = () => {
     return (
         <nav className="fixed w-full top-0 text-white flex justify-between h-20 ">
             <Image src="/moveoverlogo.png" alt="Move Over Logo" width="200" height="150"></Image>
+            <h1>user: {currentUser?.username || "none"}</h1>
             <div className="links flex mr-2">
                 <button
                     onClick={() => router.push("/startmove")}
