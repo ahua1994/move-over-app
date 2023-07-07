@@ -15,14 +15,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <AuthContextProvider>
-                <AppContextProvider>
-                    <Navbar />
-                    <ToastContainer>
-                        <body className={inter.className}>{children}</body>
-                    </ToastContainer>
-                </AppContextProvider>
-            </AuthContextProvider>
+            <head></head>
+            <body className={inter.className}>
+                <AuthContextProvider>
+                    <AppContextProvider>
+                        <ToastContainer />
+                        <Navbar />
+                        {children}
+                    </AppContextProvider>
+                </AuthContextProvider>
+            </body>
         </html>
     );
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Register = () => {
+    console.log("register");
     const {
         currentUser,
         registerUsername,
