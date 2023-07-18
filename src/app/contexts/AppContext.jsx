@@ -16,6 +16,9 @@ const AppContextProvider = ({ children }) => {
         hideProgressBar: true,
     };
 
+    // const drag = () => {};
+    //no need to move item, just change place id?
+    // const drop = () => {};
     const getObj = async (type, id) => {
         let res = await axios
             .get(`${baseUrl}move/${type}/${id}/`, {
