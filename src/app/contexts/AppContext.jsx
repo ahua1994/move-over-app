@@ -31,21 +31,23 @@ const AppContextProvider = ({ children }) => {
     //             toast.error(err.message, toastStyle);
     //         });
     // };
-    // const patch = (newId) => {};
-    //no need to move item, just change place id?
-    // const drop = async(obj,id) => {
-    //     let res = await axios
-    //         .patch(`${baseUrl}move/rud/${id}/`, {place:newId}, {
-    //             headers: {
-    //                 Authorization: `Token ${
-    //                     JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
-    //                 }`,
-    //             },
-    //         })
-    //         .catch(err => {
-    //             toast.error(err.message, toastStyle);
-    //         });
-    // };
+    const drop = async (obj, id, newFK) => {
+        let res = await axios
+            .patch(
+                `${baseUrl}move/rud/${id}/`,
+                { place: newFK },
+                {
+                    headers: {
+                        Authorization: `Token ${
+                            JSON.parse(localStorage.getItem("MOVE_OVER_CURRENT_USER")).key
+                        }`,
+                    },
+                }
+            )
+            .catch(err => {
+                toast.error(err.message, toastStyle);
+            });
+    };
     const getMyMoves = async () => {};
     const getObj = async (type, id) => {
         let res = await axios
@@ -57,6 +59,7 @@ const AppContextProvider = ({ children }) => {
                 },
             })
             .catch(err => toast.error(err.message, toastStyle));
+        // probably have to store in variable
     };
 
     const createObj = async (type, obj) => {
@@ -91,6 +94,8 @@ const AppContextProvider = ({ children }) => {
                 getObj,
                 createObj,
                 deleteObj,
+                getMyMoves,
+                drop,
             }}
         >
             {children}

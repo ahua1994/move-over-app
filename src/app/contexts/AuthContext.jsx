@@ -53,14 +53,14 @@ const AuthContextProvider = ({ children }) => {
             })
             .catch(err => toast.error(err.message, toastStyle));
         if (res.data) {
+            setRegisterEmail("");
+            setRegisterPassword("");
+            setRegisterUsername("");
             localStorage.setItem(
                 "MOVE_OVER_CURRENT_USER",
                 JSON.stringify({ key: res.data.key, ...res.data.user })
             );
             setCurrentUser({ key: res.data.key, ...res.data.user });
-            setRegisterEmail("");
-            setRegisterPassword("");
-            setRegisterUsername("");
             toast.success("Registered Successfully!", toastStyle);
             router.push("/");
         }
@@ -82,6 +82,10 @@ const AuthContextProvider = ({ children }) => {
             toast.success("Login Successful !", toastStyle);
             router.push("/");
         }
+        // else {
+        //     console.log("fail");
+        //     return toast.error("Something Went Wrong :(", toastStyle);
+        // }
     };
     return (
         <AuthContext.Provider

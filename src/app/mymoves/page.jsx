@@ -2,9 +2,11 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../contexts/AuthContext";
+import { AppContext } from "../contexts/AppContext";
 
 const MyMoves = () => {
     const { currentUser } = useContext(AuthContext);
+    const { getMyMoves, myMoves } = useContext(AppContext);
     const router = useRouter();
     useEffect(() => !currentUser && router.push("/login"), []);
     const mymoves = [
@@ -19,6 +21,20 @@ const MyMoves = () => {
             status: false,
             owner: "me",
             notes: "careful with glass",
+            move_date: "timestamp",
+            created: "timestamp",
+        },
+        {
+            id: 2,
+            places: [],
+            purpose: "",
+            places_count: 3,
+            items: [],
+            items_count: 3,
+            desc: "desc",
+            status: false,
+            owner: "me",
+            notes: "careful with eggs",
             move_date: "timestamp",
             created: "timestamp",
         },
