@@ -46,6 +46,7 @@ const AppContextProvider = ({ children }) => {
     //             toast.error(err.message, toastStyle);
     //         });
     // };
+    const getMyMoves = async () => {};
     const getObj = async (type, id) => {
         let res = await axios
             .get(`${baseUrl}move/${type}/${id}/`, {
