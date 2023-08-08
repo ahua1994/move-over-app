@@ -81,11 +81,10 @@ const AuthContextProvider = ({ children }) => {
             setLoginPassword("");
             toast.success("Login Successful !", toastStyle);
             router.push("/");
+        } else {
+            console.log("fail");
+            return toast.error("Something Went Wrong :(", toastStyle);
         }
-        // else {
-        //     console.log("fail");
-        //     return toast.error("Something Went Wrong :(", toastStyle);
-        // }
     };
     return (
         <AuthContext.Provider
