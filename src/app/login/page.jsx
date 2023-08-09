@@ -3,6 +3,7 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const { currentUser, loginEmail, loginPassword, setLoginEmail, setLoginPassword, handleLogin } =
@@ -12,6 +13,7 @@ const Login = () => {
         currentUser && router.push("/");
         setLoginEmail("");
         setLoginPassword("");
+        toast("hi");
     }, []);
     return (
         <div className="Login flex justify-center items-center mt-24">
