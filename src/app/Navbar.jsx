@@ -57,7 +57,7 @@ const Navbar = () => {
                         onClick={logout}
                         className="logout align h-14 px-5 pb-1 mt-4 mx-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800"
                     >
-                        Logout
+                        Signout
                     </button>
                 )}
             </div>
