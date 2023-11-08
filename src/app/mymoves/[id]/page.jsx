@@ -10,7 +10,12 @@ const Move = () => {
     const { currentUser } = useContext(AuthContext);
     const { createObj } = useContext(AppContext);
 
-    return <div>Move {id}</div>;
+    return (
+        <div>
+            Move {id}
+            <p>Owner: {currentUser}</p>
+        </div>
+    );
 };
 
 export default Move;
